@@ -1,3 +1,6 @@
+# The data-reading code is the same for all plot-generating scripts, so we
+# "include" it by sourcing it from the shared file "readData.R". See that file
+# for details.
 source("readData.R")
 df <- readData()
 
@@ -14,16 +17,16 @@ plot(df$datetime, df$Global_active_power, type="l",
 
 # this is the meat of plot3.R. The only reason it's copy-pasted here
 # (instead of using a proper reuse mechanism) is for graders' convenience.
-plot(df$datetime, df$Sub_metering_1, 
+plot(df$datetime, df$Sub_metering_1,
      type="l",
-     xlab="", 
+     xlab="",
      ylab="Energy sub metering"
 )
 
 points(df$datetime, df$Sub_metering_2, type="l", col="red")
 points(df$datetime, df$Sub_metering_3, type="l", col="blue")
 
-legend("topright", 
+legend("topright",
        legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
        col=c("black", "red", "blue"),
        lty=1

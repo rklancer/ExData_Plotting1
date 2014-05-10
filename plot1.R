@@ -1,4 +1,6 @@
-# Read the data.
+# The data-reading code is the same for all plot-generating scripts, so we
+# "include" it by sourcing it from the shared file "readData.R". See that file
+# for details.
 source("readData.R")
 df <- readData()
 
