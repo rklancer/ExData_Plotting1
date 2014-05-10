@@ -44,6 +44,11 @@ readData <- (function() {
         df$datetime <- strptime(paste(df$Date, df$Time), "%d/%m/%Y %H:%M:%S")
         df$Date = NULL
         df$Time = NULL
+
+        # note: there are no NA values ("?"s) in the filtered data.
+        # $ grep "\?" < data/household_power_consumption_filtered.txt
+        # $
+
         df
     }
 })()
