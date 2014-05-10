@@ -21,7 +21,7 @@ readData <- (function() {
     writeSubset <- function() {
         l <- readLines('data/household_power_consumption.txt')
         # c(1, ...): remember to write header row
-        writeLines(l[c(1, grep("^[1-2]\\/2\\/2007", l))],
+        writeLines(l[c(1, grep("^0?[1-2]\\/0?2\\/2007", l))],
             'data/household_power_consumption_filtered.txt',
         )
     }
